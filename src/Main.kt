@@ -18,15 +18,13 @@ fun main(){
         println(palabraEnOculto)
     }  while (palabraEnOculto.contains("_"))
     println("Enhorabuena! has acertado. La palabra era $palabraBuscada. Has necesitado $intentos intentos")
-
-
 }
 
 fun getPalabraEnOculto(palabraBuscada: String, listChar: List<Char>) : String {
     var palabraEnOculto = ""
-    palabraBuscada.toUpperCase().toCharArray().forEachIndexed() {index, char ->
+    palabraBuscada.toUpperCase().toCharArray().forEach { char ->
         if (listChar.contains(char)){
-            palabraEnOculto += palabraBuscada[index]
+            palabraEnOculto += char
         } else {
             palabraEnOculto += "_"
         }
